@@ -5,7 +5,7 @@ dropdb:
 	docker exec -it local_postgres dropdb simple_bank
 
 postgres:
-	docker run --name local_postgres -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -d postgres
+	docker run --name local_postgres --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -d postgres
 
 migrateup:
 	migrate -path db/migration -database "postgresql://root:password@localhost:5432/simple_bank?sslmode=disable" -verbose up
