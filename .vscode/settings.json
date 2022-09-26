@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-action.json": "file:///Users/mike.briones/development/personal/simplebank/.github/workflows/deploy.yml"
+    }
+}
